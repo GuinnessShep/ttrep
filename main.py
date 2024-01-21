@@ -8,12 +8,12 @@ try:
     import user_agent
     import datetime
 except ModuleNotFoundError:
-    os.system("pip install pystyle")
-    os.system("pip install colorama")
-    os.system("pip install tls_client")
-    os.system("pip install httpx")
-    os.system("pip install user_agent")
-    os.system("pip install datetime")
+    os.system("pip3 install pystyle")
+    os.system("pip3 install colorama")
+    os.system("pip3 install tls_client")
+    os.system("pip3 install httpx")
+    os.system("pip3 install user_agent")
+    os.system("pip3 install datetime")
 
 from pystyle import Write, System, Colorate, Colors
 from colorama import Fore, Style, init
