@@ -38,7 +38,6 @@ generated_agents = 0
 total = 1
 
 start = time.time()
-ctypes.windll.kernel32.SetConsoleTitleW(f'[ Tiktok MassReport ] By Guinness Shepherd')
 
 def save_proxies(proxies):
     with open("proxies.txt", "w") as file:
