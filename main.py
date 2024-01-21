@@ -1,19 +1,26 @@
-import ctypes, json, os, time, random, string, getpass, threading, re, sys
+import ctypes
+import json
+import os
+import time
+import random
+import string
+import getpass
+import threading
+import re
+import sys
+import subprocess
 
-try:
-    import pystyle
-    import colorama
-    import tls_client
-    import httpx
-    import user_agent
-    import datetime
-except ModuleNotFoundError:
-    os.system("pip3 install pystyle")
-    os.system("pip3 install colorama")
-    os.system("pip3 install tls_client")
-    os.system("pip3 install httpx")
-    os.system("pip3 install user_agent")
-    os.system("pip3 install datetime")
+def install_packages(packages):
+    try:
+        for package in packages:
+            __import__(package)
+    except ImportError:
+        print(f"Required package '{package}' is not installed.")
+        print("Attempting to install required packages...")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', *packages])
+
+required_packages = ['pystyle', 'colorama', 'tls_client', 'httpx', 'user_agent', 'datetime']
+install_packages(required_packages)
 
 from pystyle import Write, System, Colorate, Colors
 from colorama import Fore, Style, init
